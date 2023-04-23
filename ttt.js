@@ -15,12 +15,14 @@ function boardClick(row, col) {
   // alert("row "+row+" col "+col);
   board[row][col] = playerTurn;
   let winner = checkWinner();
+  changePlayer();
+  updateBoardImage();
+
+  
   //check winner
   if (winner != 0) {
     alert("Player " + winner + " win!");
   }
-  changePlayer();
-  updateBoardImage();
 }
 
 function changePlayer() {
@@ -71,6 +73,16 @@ function checkWinner() {
     }
   }
   return 0;
+}
+
+function resetGame(){
+    board = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+    ]; 
+    playerTurn = 1;
+    updateBoardImage();
 }
 
 updateBoardImage();
