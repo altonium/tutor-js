@@ -21,7 +21,8 @@ function boardClick(row, col) {
   
   //check winner
   if (winner != 0) {
-    alert("Player " + winner + " win!");
+    document.getElementById("playerTurn").innerHTML = "Congratulation! Player " + winner + " is the winner!";
+
   }
 }
 
